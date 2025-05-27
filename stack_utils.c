@@ -15,7 +15,7 @@ static void free_list(t_stack *stack)
 	free(stack);
 }
 
-static t_stack *add_stack(t_stack *stack, int num)
+t_stack *push_stack(t_stack *stack, int num)
 {
 	t_stack *new;
 
@@ -23,10 +23,12 @@ static t_stack *add_stack(t_stack *stack, int num)
 	if (!new)
 		return (NULL);
 	new->rank = num;
-	new->next = stack;
-	new->prev = stack->prev;
-	stack->prev->next = new;
-	stack->prev = new;
+	if (stack->prev == stack)
+		stack->prev = new;
+	new->prev = stack;
+	new->next = stack->next;
+	stack->next->prev = new;
+	stack->next = new;
 	return (new);
 }
 
@@ -41,15 +43,14 @@ t_stack *stack_utils(int *arr, int size)
 	a_stack->rank = -1;
 	a_stack->prev = a_stack;
 	a_stack->next = a_stack;
-	i = 0;
-	while (i < size)
+	i = size - 1;
+	while (size--)
 	{
-		if (!add_stack(a_stack, arr[i]))
+		if (!push_stack(a_stack, arr[size]))
 		{
 			free_list(a_stack);
 			return (NULL);
 		}
-		i++;
 	}
 	return (a_stack);
 }
