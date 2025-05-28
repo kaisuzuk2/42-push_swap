@@ -29,6 +29,7 @@ t_stack *push_stack(t_stack *stack, int num)
 	new->next = stack->next;
 	stack->next->prev = new;
 	stack->next = new;
+	stack->size++;
 	return (new);
 }
 
@@ -40,6 +41,7 @@ t_stack *stack_utils(int *arr, int size)
 	a_stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!a_stack)
 		return (NULL);
+	a_stack->size = 0;
 	a_stack->rank = -1;
 	a_stack->prev = a_stack;
 	a_stack->next = a_stack;
