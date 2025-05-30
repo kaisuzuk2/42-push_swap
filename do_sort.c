@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void do_rotate_both(t_cost *cst, t_stack *stk_a, t_stack *stk_b)
+static void do_rotate_both(t_cost *cst, t_stack *stk_a, t_stack *stk_b)
 {
 	while (cst->rr)
 	{
@@ -16,7 +16,7 @@ void do_rotate_both(t_cost *cst, t_stack *stk_a, t_stack *stk_b)
 	}
 }
 
-void do_rotate(t_cost *cst, t_stack *stk_a, t_stack *stk_b)
+static void do_rotate(t_cost *cst, t_stack *stk_a, t_stack *stk_b)
 {
 	while (cst->ra)
 	{

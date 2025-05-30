@@ -53,7 +53,8 @@ static void	quick_sort(int *arr, int left, int right)
 	quick_sort(arr, j + 1, right);
 }
 
-int	*make_rank_array(int *arr, int size)
+
+int *make_rank_array(int *arr, int size)
 {
 	int	*sorted_arr;
 	int	*rank;
