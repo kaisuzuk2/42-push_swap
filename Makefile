@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 19:14:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/06/10 18:42:53 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/06/10 23:39:05 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ B_OBJS = $(B_SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCS)
 	make -C ./printf
 	cp ./printf/libftprintf.a .
 	$(CC) $(FLAG) -o $(NAME) main.c $(SRCS) libftprintf.a
