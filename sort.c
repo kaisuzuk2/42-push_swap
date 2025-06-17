@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:08:32 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/10 17:11:01 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/18 00:29:30 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,15 @@ static int	do_sort(t_stack *stk_a, t_stack *stk_b)
 
 static int	sort(t_stack *stk_a, t_stack *stk_b)
 {
+	int	sort_limit;
+
+	if (stk_a->size >= 500)
+		sort_limit = 30;
+	else
+		sort_limit = 5;
 	while (stk_b->size < 2)
 		push_b(stk_b, stk_a);
-	while (stk_a->size > 3)
+	while (stk_a->size > sort_limit)
 	{
 		if (do_sort(stk_a, stk_b))
 			return (EXIT_MALLOC_ERROR);
