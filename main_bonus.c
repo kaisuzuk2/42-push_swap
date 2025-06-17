@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:36:08 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/10 18:07:31 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/18 00:30:02 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	checker_op(t_stack *stk_a, t_stack *stk_b, char *read_val)
 	else if (!ft_strncmp(read_val, REVERSE_ROTATE_BOTH, 4))
 		(reverse_rotate(stk_a), reverse_rotate(stk_b));
 	else
-		return (ft_printf(FAIL), PROGRAM_ERROR);
+		return (ft_printf(ERROR), PROGRAM_ERROR);
 	return (0);
 }
 
