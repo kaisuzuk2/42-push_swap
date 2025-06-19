@@ -6,12 +6,12 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 17:19:57 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/06/10 17:21:51 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/06/19 16:27:23 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = gnl.a
+NAME = get_next_line.a
 CC = cc
 FLAG = -Wall -Wextra -Werror
 DEBUG = -g -fsanitize=address 
