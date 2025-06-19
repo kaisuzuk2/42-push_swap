@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:36:08 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/18 00:43:33 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/19 20:20:08 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 	int			return_val;
 	const int	size = argc - 1;
 
+	// ここがだめだね 1このときでもOK出さなきゃね
 	if (argc <= 2)
 		return (0);
 	if (ft_is_digit(argv, argc))
