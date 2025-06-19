@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 19:14:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2025/06/19 17:00:41 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2025/06/19 18:49:50 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ $(NAME): main.o $(OBJS) $(LIB)
 
 bonus: $(B_NAME)
 
-$(B_NAME): main_bonus.o $(B_OBJS) $(LIB) $(GNL)
+$(B_NAME): main_bonus.o $(B_OBJS) $(OBJS) $(LIB) $(GNL)
 	$(CC) $(FLAG) -o $(B_NAME) main_bonus.o $(B_OBJS) $(OBJS) $(LIB) $(GNL)
 	
 $(LIB): 
@@ -86,5 +86,9 @@ fclean: clean
 	$(RM) $(B_NAME)
 	
 re: fclean all
+
+tester:
+	git clone https://github.com/nafuka11/push_swap_tester.git
+	git clone https://github.com/kaaaaakun/push-swap-pain.git
 
 .PHONY: all clean fclean re bonus
