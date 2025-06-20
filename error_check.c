@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:48:00 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/09 17:32:43 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/20 18:32:39 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long	ft_atol(const char *nptr);
 
-int	ft_is_sort(const int *arr, int size)
+t_bool	ft_is_sort(const int *arr, int size)
 {
 	int	i;
 
@@ -22,13 +22,13 @@ int	ft_is_sort(const int *arr, int size)
 	while (i < size - 1)
 	{
 		if (arr[i] != arr[i + 1] - 1)
-			return (0);
+			return (FALSE);
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
 
-int	ft_is_digit(char **argv, int size)
+t_bool	ft_is_digit(char **argv, int size)
 {
 	int	i;
 	int	j;
@@ -43,20 +43,20 @@ int	ft_is_digit(char **argv, int size)
 		{
 			j++;
 			if (argv[i][j] == '\0')
-				return (1);
+				return (FALSE);
 		}
 		while (argv[i][j])
 		{
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				return (1);
+				return (FALSE);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (TRUE);
 }
 
-int	ft_is_duplicates(const int *arr, int size)
+t_bool	ft_is_duplicates(const int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -68,12 +68,12 @@ int	ft_is_duplicates(const int *arr, int size)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
-				return (1);
+				return (FALSE);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (TRUE);
 }
 
 int	*char_to_int(char **argv, int size)

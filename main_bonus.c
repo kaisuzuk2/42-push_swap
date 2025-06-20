@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 14:36:08 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/19 20:20:08 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/20 18:31:06 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,13 @@ int	main(int argc, char **argv)
 	int			return_val;
 	const int	size = argc - 1;
 
-	// ここがだめだね 1このときでもOK出さなきゃね
-	if (argc <= 2)
-		return (0);
 	if (ft_is_digit(argv, argc))
 		return (ft_printf(ERROR), EXIT_USER_ERROR);
 	arr = char_to_int(argv, argc);
 	if (!arr)
 		return (EXIT_MALLOC_ERROR);
+	if (argc <= 2)
+		return (0);
 	if (!compression(arr, size))
 		return (EXIT_MALLOC_ERROR);
 	if (ft_is_duplicates(arr, size))

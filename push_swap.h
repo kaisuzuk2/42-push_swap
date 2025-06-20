@@ -6,12 +6,16 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:01:13 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2025/06/09 23:59:03 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2025/06/20 18:31:44 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+typedef int t_bool;
+# define TRUE 1
+# define FALSE 0
 
 # define EXIT_USER_ERROR 1
 # define EXIT_MALLOC_ERROR -1
